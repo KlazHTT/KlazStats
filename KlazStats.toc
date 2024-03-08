@@ -1,0 +1,14 @@
+## Interface: 100205
+## Title: Klaz|cff1994ffStats|r
+## Author: Klaz
+## Notes: Displays loot specialization, fps, latency, durability, and clock on screen. (/klazstats)
+## IconTexture: Interface\AddOns\KlazStats\Media\KlazAddOnIcon.blp
+## SavedVariables: KlazStatsDB
+
+Core\Launch.lua
+Core\Localization.lua
+Core\Functions.lua
+Core\Config.lua
+Core\Mover.lua
+
+Modules\Stats.lua
