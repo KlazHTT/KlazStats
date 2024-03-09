@@ -31,19 +31,14 @@ end
 --------------------------------------------------------------------------------
 
 T.GetLootSpec = function()
-  local currentSpec = GetSpecialization()
-  local currentSpecName = select(2, GetSpecializationInfo(currentSpec))
   local lootSpecID = GetLootSpecialization()
-  local lootSpec = select(2, GetSpecializationInfoByID(lootSpecID))
+  local currentSpec = GetSpecialization()
+  local currentSpecName = currentSpec and select(2,GetSpecializationInfo(currentSpec)) or 'None'
 
-  -- if loot spec was manually set
-  if lootSpec then
-    return '|cnWHITE_FONT_COLOR:Loot:|r '..lootSpec..'    '
-  -- otherwise use current loot spec
-  elseif currentSpec then
-    return '|cnWHITE_FONT_COLOR:Loot:|r '..currentSpecName..'    '
+  if lootSpecID ~= 0 then
+    return '|cnWHITE_FONT_COLOR:Loot:|r '..select(2, GetSpecializationInfoByID(lootSpecID))..'    '
   else
-    return ''
+    return '|cnWHITE_FONT_COLOR:Loot:|r '..currentSpecName..'    '
   end
 end
 
